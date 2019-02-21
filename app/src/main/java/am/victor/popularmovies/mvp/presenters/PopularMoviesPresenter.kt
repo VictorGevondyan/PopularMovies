@@ -47,7 +47,7 @@ class PopularMoviesPresenter : BasePresenter<PopularMoviesView>() {
 
         showProgress(isPageLoading, isRefreshing)
 
-        val observable = popularMoviesAPI!!.getPopularMovies( PopularMoviesAPI.apiKey, page/*, PopularMoviesAdapter.PAGE_SIZE*/)
+        val observable = popularMoviesAPI.getPopularMovies( PopularMoviesAPI.apiKey, page/*, PopularMoviesAdapter.PAGE_SIZE*/)
 
         val subscription = observable
             .subscribeOn(Schedulers.io())
